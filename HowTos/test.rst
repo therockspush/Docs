@@ -32,6 +32,8 @@ Complete steps 1-5 of Firewall Network Workflow in Aviatrix controller to prepar
 2a. Chose your subscription model (BYOL vs PAYG). For more information on this topic, please check page 11 of the Check Point `documentation <http://dl3.checkpoint.com/paid/eb/ebb444ce93242cf3f80f76637678906b/CP_R77.30_SecurityGateway_AmazonVPC_GettingStartedGuide.pdf?HashKey=1559349126_ed97c19f0055aaa62bf0bd69ba4e42ac&xtn=.pdf>`_.
 
 2b. Go to aws.amazon.com/marketplace and search for the chosen instance model/version in AWS Marketplaceand “Continue to Subscribe”
+
 |image1|
-|image1| image:: /HowTos/config_Checkpoint_media/image1.png
+
+|image1| image:: config_Checkpoint_media/image1.png
 
