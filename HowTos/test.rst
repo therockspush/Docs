@@ -12,7 +12,7 @@
 
 4. For more information on the differences across the available models/versions we suggest the following `link <https://supportcenter.checkpoint.com/supportcenter/portal?eventSubmit_doGoviewsolutiondetails=&solutionid=sk95746>`_. Check Point has recommended the upgrade to R80 as part of their roadmap. For more information regarding such advisories, please check this `link <https://supportcenter.checkpoint.com/supportcenter/portal?eventSubmit_doGoviewsolutiondetails=&solutionid=sk110980>`_.
 
-
+|login|
 
 =========================================================
 Example Config for Checkpoint VM in AWS
@@ -33,7 +33,6 @@ Complete steps 1-5 of Firewall Network Workflow in Aviatrix controller to prepar
 
 2b. Go to aws.amazon.com/marketplace and search for the chosen instance model/version in AWS Marketplaceand “Continue to Subscribe”
 
-|image1|
-
-|image1| image:: config_Checkpoint_media/image1.png
+|login| image:: config_FortiGate_media/login.png
+   :scale: 40%
 
