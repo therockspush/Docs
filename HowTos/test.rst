@@ -33,6 +33,6 @@ Complete steps 1-5 of Firewall Network Workflow in Aviatrix controller to prepar
 
 2b. Go to aws.amazon.com/marketplace and search for the chosen instance model/version in AWS Marketplaceand “Continue to Subscribe”
 
-|HowTos/config_Checkpoint_media/image1.png|
+[[HowTos/config_Checkpoint_media/image1.png]]
       or
 |image2|
