@@ -213,41 +213,41 @@ You can view if traffic is forwarded to firewall instance by going to FortiView
 8e. For more information on the Firewall network solution, please refer to this `link <https://docs.aviatrix.com/HowTos/firewall_network_faq.html>`_.
 
 
-.. |image1| image:: ./config_Checkpoint_media/image1.png
+.. |image1| image:: ./barracuda_images/image1.png
     :width: 100%
-.. |image2| image:: ./config_Checkpoint_media/image2.png
+.. |image2| image:: ./barracuda_images/image2.png
     :width: 100%
-.. |image3| image:: ./config_Checkpoint_media/image3.png
+.. |image3| image:: ./barracuda_images/image3.png
     :width: 100%
-.. |image4| image:: ./config_Checkpoint_media/image4.png
+.. |image4| image:: ./barracuda_images/image4.png
     :width: 100%
-.. |image5| image:: ./config_Checkpoint_media/image5.png
+.. |image5| image:: ./barracuda_images/image5.png
     :width: 100%
-.. |image6| image:: ./config_Checkpoint_media/image6.png
+.. |image6| image:: ./barracuda_images/image6.png
     :width: 100%
-.. |image7| image:: ./config_Checkpoint_media/image7.png
+.. |image7| image:: ./barracuda_images/image7.png
     :width: 100%
-.. |image8| image:: ./config_Checkpoint_media/image8.png
+.. |image8| image:: ./barracuda_images/image8.png
     :width: 100%
-.. |image9| image:: ./config_Checkpoint_media/image9.png
+.. |image9| image:: ./barracuda_images/image9.png
     :width: 100%
-.. |image10| image:: ./config_Checkpoint_media/image10.png
+.. |image10| image:: ./barracuda_images/image10.png
     :width: 100%
-.. |image11| image:: ./config_Checkpoint_media/image11.png
+.. |image11| image:: ./barracuda_images/image11.png
     :width: 100%
-.. |image12| image:: ./config_Checkpoint_media/image12.png
+.. |image12| image:: ./barracuda_images/image12.png
     :width: 100%
-.. |image13| image:: ./config_Checkpoint_media/image13.png
+.. |image13| image:: ./barracuda_images/image13.png
     :width: 100%
-.. |image14| image:: ./config_Checkpoint_media/image14.png
+.. |image14| image:: ./barracuda_images/image14.png
     :width: 100%
-.. |image15| image:: ./config_Checkpoint_media/image15.png
+.. |image15| image:: ./barracuda_images/image15.png
     :width: 100%
-.. |image16| image:: ./config_Checkpoint_media/image16.png
+.. |image16| image:: ./barracuda_images/image16.png
     :width: 100%
-.. |image17| image:: ./config_Checkpoint_media/image17.png
+.. |image17| image:: ./barracuda_images/image17.png
     :width: 100%
-.. |image18| image:: ./config_Checkpoint_media/image18.png
+.. |image18| image:: ./barracuda_images/image18.png
     :width: 100%
 .. |image19| image:: ./config_Checkpoint_media/image19.png
     :width: 100%
