@@ -48,7 +48,7 @@ Complete steps 1-5 of Firewall Network Workflow in the Aviatrix controller to pr
 |image5|
 
 
-2g. Click Next: Add Storage, the Next: Add Tags.  Add any necessary tags then click Next: Configure Security Group.  No changes need to be made to the Security Group now.  Choose Review and Launch, the Launch on the next screen.  You will be prompted for a key pair.  None will be needed for the Firewall.  Choose Launch Instances.
+2g. Click Next: Add Storage, then Next: Add Tags.  Add any necessary tags then click Next: Configure Security Group.  No changes need to be made to the Security Group now.  Choose Review and Launch, the Launch on the next screen.  You will be prompted for a key pair.  None will be needed for the Firewall.  Choose Launch Instances.
 
 
 
@@ -74,11 +74,15 @@ Complete steps 1-5 of Firewall Network Workflow in the Aviatrix controller to pr
 |image7|
 
 
-3d. These steps will be following the `Barracuda Documentation <https://campus.barracuda.com/product/cloudgenfirewall/doc/79462723/how-to-add-aws-elastic-network-interfaces-to-a-firewall-instance/>`_. for adding an additional interface.  Once logged in you will need to configure the second(eth1) interface on the Barracuda.  Go to CONFIGURATION > Configuration Tree > Box > Network.
+3d. These steps will be following the `Barracuda Documentation <https://campus.barracuda.com/product/cloudgenfirewall/doc/79462723/how-to-add-aws-elastic-network-interfaces-to-a-firewall-instance/>`_ for adding an additional interface.  
+Once logged in you will need to configure the second(eth1) interface on the Barracuda.  Go to CONFIGURATION > Configuration Tree > Box > Network.
 
 |image8|
+
 Click Lock.
+
 In the left menu, click Interfaces.
+
 In the Network Interface Cards table, double click the 10dynmod entry.  The window will open.
 
 |image9|
@@ -95,13 +99,21 @@ Click Send Changes and Activate.
 
 
 3e. Now you need to add a Direct Attached Route for the second Network Interface.
+
 Go to Configuration > Configuration Tree > Box > Network.
-Click Lock
+
+Click Lock.
+
 In the left menu, click Routing.
+
 Click + in the IPv4 Routing Table to add an attached route.
+
 -Target Network address will be the subnet you put on eth1, the aviatrix-fireGW-DMZ-firewall subnet.
+
 -Route Type, select direct attached network.
+
 -Interface Name, select eth1.
+
 -Trust Level, select Trusted.
 
 |image11|
@@ -113,8 +125,11 @@ Click Send Changes and Activate.
 
 
 3f. The Network Configuration will need to be activated now.
+
 Go to CONTROL > Box.
+
 In the Network section of the left menu, click Activate new network configuration.  The Network Activation window opens.
+
 Click Failsafe.
 
 The route is now pending in CONTROL > Network.
@@ -123,10 +138,15 @@ The route is now pending in CONTROL > Network.
 
 
 3g. A virtual IP needs to be added to the Virtual Server.  It will be the private IP assigned to your eth1 interface from the AWS console.
+
 Go to CONFIGURATION > Configuration Tree > Box > Virtual Servers > your virtual server > Server Properties.
+
 Click Lock.
+
 Click + in the Additional IP table. The Additional IP window opens.
+
 -Additional IP, the private IP address configured for the network interface in step 1.
+
 -Reply to Ping, select Yes.
 
 |image13|
@@ -142,12 +162,19 @@ Click Send Changes and Activate.
 4a.The next step is to update the route table. For the purpose of this guide, we suggest adding three routes, each for a RFC1918 address pointing to the private IP of the eth2/ENI of the Aviatrix gateway in question (whether you are attaching the instance to the main or to the backup gateway). 
 
 4b. Go to CONFIGURATION > Configuration Tree > Box > Network.
+
 Click Lock.
+
 In the left menu, click Routing.
+
 Click + in the IPv4 Routing Table to add an gateway route.
+
 -Target Network address will be a summary of your VPCs or all private addresses.
+
 -Route Type, select gateway.
+
 -Gateway, add the private IP of the eth2 interace of your primary Aviatrix FireNet Gateway.
+
 -Trust Level, select Trusted.
 
 |image14|
@@ -156,7 +183,9 @@ Click OK.
 Click Send Changes and Activate.
 
 The Network Configuration will need to be activated now.
+
 Go to CONTROL > Box.
+
 In the Network section of the left menu, click Activate new network configuration.  The Network Activation window opens.
 Click Failsafe.
 
@@ -171,9 +200,15 @@ If it hasn't already been done, Source/Dest. Check will also need to be disabled
 -----------------------------------------------------------
 
 5a. Security Groups in AWS for the Barracuda ENIs will need to be adjusted as necessary to allow the traffic from the various VPCs to hit the interface.
-5b. Building rules to allow VPC to VPC traffic, and Egress traffic if needed is next. There are two pre-built rules, CLOUD-NET-2-INTERNET and CLOUD-NET-2-CLOUD-NET, that we can adjust to match your VPCs within AWS.
+
+5b. Building rules to allow VPC to VPC traffic, and Egress traffic if needed is next.
+
+There are two pre-built rules, CLOUD-NET-2-INTERNET and CLOUD-NET-2-CLOUD-NET, that we can adjust to match your VPCs within AWS.
+
 Go to CONFIGURATION > Configuration Tree > Virtual Servers > your virtual server > NGFW(Firewall) > Forwarding Rules.
+
 Click Lock.
+
 Open the CLOUD-NET-2-INTERNET rule and add your VPCs CIDR ranges to the Source field.
 
 |image16|
@@ -185,7 +220,7 @@ Click Send Changes and Activate.
 
 |image17|
 
-left off here
+
 
 
 6. Ready to go!
@@ -202,16 +237,14 @@ Launch one instance in Spoke-1 VPC and Spoke-2 VPC. From one instance to ping th
 
 7. View Traffic Log
 ----------------------
-7a. The final step is to monitor your traffic to confirm that the inspection is being performed as configured. If you deployed the R77.30 instance, then you should open the SmartView Tracker and filter the logs accordingly
-|image20|
-|image21|
-7b. On the R80.10 SmartConsole, go to Logs & Monitor instead.
-|image22|
-7c. Now, we added a third interface as currently our dashboard requires 3 separate interfaces, but CloudGuard will use eth0 for both management and egress traffic by default. If you would like to move the Gaia management interface to eth2, please use this `link <https://sc1.checkpoint.com/documents/R80.20_GA/WebAdminGuides/EN/CP_R80.20_Installation_and_Upgrade_Guide/html_frameset.htm?topic=documents/R80.20_GA/WebAdminGuides/EN/CP_R80.20_Installation_and_Upgrade_Guide/205119>`_.as a reference.
-7d. Great. You are now good to repeat this process to add more instances to talk to the active gateway and also to the backup gateway. The difference regarding the backup gateway attachment is that the subnets will likely be in a different AZ.
-You can view if traffic is forwarded to firewall instance by going to FortiView
-8e. For more information on the Firewall network solution, please refer to this `link <https://docs.aviatrix.com/HowTos/firewall_network_faq.html>`_.
+Traffic can be viewed on the FIREWALL section of the Firewall Admin.  The two most useful views are Live and History.  History will show you any expired sessions and any traffic blocked by the firewall, while the Live view will show any active sessions.
 
+|image18|
+
+8. Scale out
+----------------------
+
+Additional Firewall instances can be added to the FireNet as needed, and load balanced using the Aviatrix Gateways.
 
 .. |image1| image:: ./barracuda_images/image1.png
     :width: 100%
@@ -249,11 +282,4 @@ You can view if traffic is forwarded to firewall instance by going to FortiView
     :width: 100%
 .. |image18| image:: ./barracuda_images/image18.png
     :width: 100%
-.. |image19| image:: ./config_Checkpoint_media/image19.png
-    :width: 100%
-.. |image20| image:: ./config_Checkpoint_media/image20.png
-    :width: 100%
-.. |image21| image:: ./config_Checkpoint_media/image21.png
-    :width: 100%
-.. |image22| image:: ./config_Checkpoint_media/image22.png
-    :width: 100%
+
