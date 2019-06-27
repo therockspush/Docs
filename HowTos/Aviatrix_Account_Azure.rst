@@ -24,7 +24,7 @@ interact with Azure Resource Manager APIs to manage resources, such as
 Virtual Machines, Network, Storage Accounts, etc.
 
 This document describes how to obtain the necessary information,
-specifically Application ID, Application Key, and
+specifically Application ID, Application Key(Client secret), and
 Application Directory ID to create an Aviatrix Cloud Account with step by
 step instructions. There are 3 sections, make sure you go through all of
 them.
@@ -41,7 +41,7 @@ Setting up Azure permission for Aviatrix involves three main steps.
 
 2. Grant Permissions
 
-3. Get Application ID, Application Key and Directory
+3. Get Application ID, Application Key(Client secret) and Directory
    ID
 
 **Important:** Complete the follow steps in order.
@@ -138,7 +138,7 @@ https://portal.azure.com
 
    E. Click Add
 
-   F. Copy the secret
+   F. Copy the secret.  This will be used as the Application Key in the Aviatrix Controller.
 
 5. Add **API permissions**.
 
@@ -167,7 +167,7 @@ At this point you should have the following information.
 +-----------------------------------+---------------+
 | **Application ID**                | From step 3   |
 +-----------------------------------+---------------+
-| **Client secret**                 | From step 3   |
+| **Application Key(Client secret)**| From step 3   |
 +-----------------------------------+---------------+
 
 
