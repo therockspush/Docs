@@ -44,7 +44,7 @@ Setting up Azure permission for Aviatrix involves three main steps.
 3. Get Application ID, Application Key(Client secret) and Directory
    ID
 
-**Important:** Complete the follow steps in order.
+**Important:** Complete the following steps in order.
 
 2.1  Step 1 – Register Aviatrix Controller Application
 -------------------------------------------------------
