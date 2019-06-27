@@ -213,10 +213,11 @@ At this point you should have the following information.
 .. |image13| image:: AviatrixAccountForAzure_media/az-ad-sub-contrib-13.PNG
    :width: 6.98958in
    :height: 3.02083in
-   |image14| image:: AviatrixAccountForAzure_media/Image14.png
+   
+.. |image14| image:: AviatrixAccountForAzure_media/Image14.png
    :width: 6.98958in
    :height: 3.02083in
-   |image15| image:: AviatrixAccountForAzure_media/Image15.png
+.. |image15| image:: AviatrixAccountForAzure_media/Image15.png
    :width: 6.98958in
    :height: 3.02083in
 
