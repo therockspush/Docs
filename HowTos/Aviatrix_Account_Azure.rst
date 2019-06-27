@@ -29,16 +29,6 @@ Application Directory ID to create an Aviatrix Cloud Account with step by
 step instructions. There are 3 sections, make sure you go through all of
 them.
 
-Or you may refer to this video:
-
-
-.. raw:: html
-
-    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
-        <iframe src="https://www.youtube.com/embed/LHqF-yyze7M" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
-    </div>
-
-
 |
 
 
@@ -69,21 +59,19 @@ https://portal.azure.com
 
 |Image01|
 
-2. Click “App registrations"
+2. Click “App registrations".  Do not choose "App registrations (Legacy)"
 
 |Image03|
 
-3. Click “+ New application registration”
+3. Click “+ New registration”
 
 |Image04|
 
    a. Name = Aviatrix Controller
 
-   b. Application Type = Web app / API
+   b. Supported account types = Accounts in this organizational directory only
 
-   c. Sign-on URL = http://aviatrix
-
-   d. Click Create.
+   c. Click Register.
 
 3. Done
 
@@ -126,56 +114,46 @@ https://portal.azure.com
 
    |Image01|
 
-2. Retrieve the **Application** **Directory ID**.
+2. Retrieve the **Application (client) ID** and **Directory (tenant) ID**.
+   
+   A. Copy the Application ID and Directory ID for later use.  
 
-   A. Scroll down the Azure Active Directory panel and Click on Properties
 
-   |Image02|
+3. Retrieve the **Client Secrets**.
 
-   B. Copy the “Directory ID” (to notepad or a convenient location)
+   A. Click Certificates & secrets
 
-3. Retrieve the **Application ID**.
-
-   A. Scroll up and click App registrations
-
-   |Image05|
-
-   B. Copy the “Application ID”
-
-4. Retrieve the **Application Key**.
-
-   A. Click Aviatrix Controller
-
-   B. Click Settings
+   B. Click New client secret
 
    |Image06|
 
-   C. Click Keys
 
    |Image07|
 
-   D. Enter in the following
+   C. Enter in the following
 
       * Description = Aviatrix
 
-      * Expires = Never expires
+      * Expires = Never
 
-   E. Click Save
+   E. Click Add
 
-   F. Copy the key value (to notepad or a convenient location)
+   F. Copy the secret
 
-5. Add **App permissions**.
+5. Add **API permissions**.
 
-   A. Click Required permissions -> Add
+   A. Click API permissions
 
    |Image08|
 
-   B. Click Select an API -> Click Windows Azure Service Management API and click Select down below
-
+   B. Click "+Add a permission"
+   
+   C. Choose Azure Service Management
+   
    |Image09|
 
-   C. Click “Access Azure Service Management as organization user” and click Select
-
+   D. Select user_impersonation then Add permissions
+   
    |Image10|
 
 6. Done
@@ -189,7 +167,7 @@ At this point you should have the following information.
 +-----------------------------------+---------------+
 | **Application ID**                | From step 3   |
 +-----------------------------------+---------------+
-| **Application Key**               | From step 3   |
+| **Client secret**                 | From step 3   |
 +-----------------------------------+---------------+
 
 
