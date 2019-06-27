@@ -118,7 +118,8 @@ https://portal.azure.com
    
    A. Copy the Application ID and Directory ID for later use.  
 
-
+   |Image14|
+   
 3. Retrieve the **Client Secrets**.
 
    A. Click Certificates & secrets
@@ -128,15 +129,17 @@ https://portal.azure.com
    |Image06|
 
 
-   |Image07|
-
    C. Enter in the following
 
       * Description = Aviatrix
 
       * Expires = Never
+      
+   |Image07|
 
    E. Click Add
+   
+   |Image15|
 
    F. Copy the secret.  This will be used as the Application Key in the Aviatrix Controller.
 
@@ -177,28 +180,28 @@ At this point you should have the following information.
 .. |image02| image:: AviatrixAccountForAzure_media/az-ad-directory-id-02.PNG
    :width: 5.65600in
    :height: 2.39763in
-.. |image03| image:: AviatrixAccountForAzure_media/az-ad-app-03.PNG
+.. |image03| image:: AviatrixAccountForAzure_media/Image03.png
    :width: 6.98958in
    :height: 3.02083in
-.. |image04| image:: AviatrixAccountForAzure_media/az-ad-app-create-04.PNG
+.. |image04| image:: AviatrixAccountForAzure_media/Image04.png
    :width: 5.20313in
    :height: 1.50209in
 .. |image05| image:: AviatrixAccountForAzure_media/az-ad-list-all-apps-05.PNG
    :width: 5.65600in
    :height: 2.39763in
-.. |image06| image:: AviatrixAccountForAzure_media/az-ad-application-id-06.PNG
+.. |image06| image:: AviatrixAccountForAzure_media/Image06.png
    :width: 6.98958in
    :height: 3.02083in
-.. |image07| image:: AviatrixAccountForAzure_media/az-ad-app-keys-save-07.PNG
+.. |image07| image:: AviatrixAccountForAzure_media/Image07.png
    :width: 5.20313in
    :height: 1.50209in
-.. |image08| image:: AviatrixAccountForAzure_media/az-ad-app-permissions-add-08.PNG
+.. |image08| image:: AviatrixAccountForAzure_media/Image08.png
    :width: 5.65600in
    :height: 2.39763in
-.. |image09| image:: AviatrixAccountForAzure_media/az-ad-app-permissions-add-api-09.PNG
+.. |image09| image:: AviatrixAccountForAzure_media/Image09.png
    :width: 6.98958in
    :height: 3.02083in
-.. |image10| image:: AviatrixAccountForAzure_media/az-ad-app-permissions-api-set-10.PNG
+.. |image10| image:: AviatrixAccountForAzure_media/Image10.png
    :width: 5.20313in
    :height: 1.50209in
 .. |image11| image:: AviatrixAccountForAzure_media/az-ad-sub-role-11.PNG
@@ -208,6 +211,12 @@ At this point you should have the following information.
    :width: 6.98958in
    :height: 3.02083in
 .. |image13| image:: AviatrixAccountForAzure_media/az-ad-sub-contrib-13.PNG
+   :width: 6.98958in
+   :height: 3.02083in
+   |image14| image:: AviatrixAccountForAzure_media/Image14.png
+   :width: 6.98958in
+   :height: 3.02083in
+   |image15| image:: AviatrixAccountForAzure_media/Image15.png
    :width: 6.98958in
    :height: 3.02083in
 
